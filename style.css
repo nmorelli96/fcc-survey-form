@@ -1,0 +1,227 @@
+html {
+	font-size: 12px;
+	color: white;
+}
+
+body {
+	text-align: center;
+	font-family: Nunito, sans-serif;
+	font-size: 1.7rem;
+	display: block;
+	box-sizing: border-box; /*soluciona la diferencia del padding fantasma */
+}
+
+body::before {
+	/*para dejar el fondo fijo al scrollear, y con un filtro q opaca el brillo*/
+	display: block;
+	content: '';
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: hsl(274, 27%, 61%); /* Used if the image is unavailable */
+	background-image: linear-gradient(
+			115deg,
+			rgba(50, 50, 150, 0.6),
+			rgba(100, 100, 200, 0.6)
+		),
+		url('https://www.paxus.com.au/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBNkNHQXc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--d1963a3d9b0d66f149d2b301fda87299f95c92a4/A%20day%20in%20the%20life%20of%20a%20software%20developer.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.text {
+	color: white;
+}
+
+h1 {
+	font-weight: 600;
+	margin-top: 35px;
+	font-size: 4.5rem;
+}
+
+#description {
+	font-weight: 400;
+	font-size: 2.3rem;
+}
+
+h1,
+#description {
+	text-shadow: 2px 2px 4px rgba(255, 0, 180, 0.6);
+}
+
+form {
+	opacity: 0.85;
+	background-color: hsl(280, 38%, 51%);
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 850px;
+	padding: 20px 35px 20px 35px;
+	margin: 30px auto 30px auto;
+	border-radius: 40px;
+}
+
+label {
+	color: white;
+	display: flex;
+	align-items: center;
+	text-align: left;
+}
+
+.big-labels {
+	color: white;
+	display: flex;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+#name,
+#email,
+#number {
+	height: 4.5rem;
+	width: 100%;
+	display: flex;
+}
+
+#comments {
+	width: 100%;
+	height: 10rem;
+	display: flex;
+}
+
+#dropdown {
+	height: 4rem;
+	width: 100%;
+	display: flex;
+	border-radius: 7px;
+	border-color: hsl(280, 38%, 51%);
+	background-color: white;
+	color: rgb(110, 110, 110);
+	font-weight: 400;
+	font-size: 1.6rem;
+	font-family: inherit;
+	text-indent: 3px;
+	height: 4.5rem;
+}
+
+[type='checkbox'],
+[type='radio'] {
+	transform: scale(1.4);
+	margin-right: 10px;
+}
+
+div {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#optional {
+	font-size: 1.4rem;
+	padding-left: 4px;
+}
+
+[type='text'],
+[type='number'],
+[type='email'],
+textarea {
+	border-radius: 7px;
+	border-color: hsl(280, 38%, 51%);
+	font-size: 1.6rem;
+	font-family: inherit;
+	text-indent: 8px; /* desplaza hacia la derecha el placeholder */
+	box-sizing: border-box; /*soluciona la diferencia del padding fantasma */
+}
+
+button {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	width: 100%;
+	height: 4rem;
+	background-color: hsl(281, 51%, 29%);
+	color: white;
+	border-radius: 7px;
+	border-color: hsl(280, 37%, 35%);
+	font-family: inherit;
+	font-size: 1.7rem;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: hsl(280, 54%, 20%);
+}
+
+#disclaimer > a {
+	color: white;
+	opacity: 0.85;
+}
+
+#disclaimer {
+	opacity: 0.85;
+}
+
+@media (max-width: 1000px) and (orientation: portrait) {
+	body {
+		font-size: 4rem;
+	}
+	h1 {
+		font-size: 7rem;
+	}
+	#description {
+		font-size: 4rem;
+	}
+	#dropdown {
+		font-size: 3.5rem;
+		height: 9rem;
+		border-radius: 20px;
+	}
+	#optional {
+		font-size: 3rem;
+	}
+	[type='text'],
+	[type='number'],
+	[type='email'],
+	textarea {
+		font-size: 3.5rem;
+	}
+	#name,
+	#email,
+	#number {
+		height: 9rem;
+		border-radius: 20px;
+	}
+	#improve-label {
+		display: block;
+		justify-content: center;
+		align-items: flex-start;
+	}
+	[type='checkbox'],
+	[type='radio'] {
+		transform: scale(3);
+		margin-right: 25px;
+	}
+	.big-labels {
+		padding-top: 20px;
+		padding-bottom: 10px;
+	}
+	textarea {
+		line-height: 8rem; /*acomoda el texto del textarea */
+		min-height: 200px;
+	}
+	button {
+		margin-top: 25px;
+		height: 8rem;
+		font-size: 3.5rem;
+	}
+	#disclaimer {
+		font-size: 2.5rem;
+	}
+}
